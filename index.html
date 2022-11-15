@@ -1,12 +1,225 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="font-size: 100px;">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>信用卡积分兑换商城</title>
-</head>
-<body>
+    <title>信用卡积分兑换商城订单页</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            font-size: 0.16rem;
+        }
+        body{
+            background: url(./assets/blurcolor@2x.png) no-repeat no-repeat;
+            background-size: cover;
+        }
+
+        .title {
+            background-color: #fff;
+            width: 100vw;
+            margin-top: 0.8rem;
+            margin-bottom: 0.2rem;
+            text-align: center;
+        }
+
+        .title h2 {
+            font-size: 0.37rem;
+        }
+        .header_nav{
+            width: 100%;
+            display: flex;
+        }
+        .header_nav div{
+            width: 20%;
+            padding: 0.2rem 0;
+        }
+        .header_nav div:first-child{
+            color: blue;
+            border-bottom: 0.02rem solid blue;
+        }
+        .goods_card{
+            position: relative;
+            display: flex;
+            align-items: center;
+            background-color: #fff;
+            padding: 0.2rem;
+            margin: 0 0.2rem 0.2rem;
+            border-radius: 0.02rem;
+        }
+        .goods_card .goods_img{
+            display: block;
+            width: 1rem;
+            padding-right: 0.2rem;
+        }
     
+        .good_info div:first-child{
+            font-weight:  600;
+            margin-bottom: 0.1rem;
+        }
+        .good_info div:last-child{
+            color: blue;
+        }
+
+        .place{
+            position: absolute;
+            right: 0.4rem;
+            padding: 0.05rem 0.1rem;
+            border-radius: 0.02rem;
+        }
+        .goods_statu_paying{
+            color: rgb(255,102,102);
+            border: 1px solid  rgb(255,102,102);
+            background-color: rgb(250,233,233);
+        }
+        .goods_statu_done{
+            color: rgb(99,203,45);
+            border: 1px solid rgb(99, 203, 45);
+            background-color: rgb(247,255,239);
+        }
+        .goods_statu_waiting{
+            color: rgb(90,89,90);
+            border: 1px solid rgb(90, 89, 90);
+            background-color: rgb(247,247,247);
+        }
+        .goods_statu_after_sale{
+            color: rgb(253,189,57);
+            border: 1px solid rgb(253,189,57);
+            background-color: rgb(255,251,231);
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        //自执行函数 自适应
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    //
+                    clientWidth = clientWidth < 320 ? 320 : clientWidth
+                    docEl.style.fontSize = 100 * (clientWidth / 750) + 'px'; // 默认1:1时候是750
+                };
+
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+            
+        })(document, window);
+    </script>
+    <header class="title">
+        <h2>
+            我的订单
+        </h2>
+        <div class="header_nav">
+            <div>全部</div>
+            <div>待付款</div>
+            <div>待发货</div>
+            <div>已完成</div>
+            <div>退款/售后</div>
+        </div>
+    </header>
+
+    <div class="content">
+        <!-- 商品图 -->
+        <div class="goods_card">
+            <img class="goods_img" src="./assets/goods/单品-图片1@2x.png" alt="">
+            <div class="good_info">
+                <div>Galaxy Z系列 5折券</div>
+                <div>50积分</div>
+            </div>
+            <div class="place goods_statu_paying">
+                待付款
+            </div>
+        </div>
+        
+        <div class="goods_card">
+            <img class="goods_img" src="./assets/goods/单品-图片1@2x.png" alt="">
+            <div class="good_info">
+                <div>Galaxy Z系列 5折券</div>
+                <div>50积分</div>
+            </div>
+            <div class="place goods_statu_done">
+                已完成
+            </div>
+        </div>
+        <div class="goods_card">
+            <img class="goods_img" src="./assets/goods/单品-图片1@2x.png" alt="">
+            <div class="good_info">
+                <div>Galaxy Z系列 5折券</div>
+                <div>50积分</div>
+            </div>
+            <div class="place goods_statu_waiting">
+                待发货
+            </div>
+        </div>
+        <div class="goods_card">
+            <img class="goods_img" src="./assets/goods/单品-图片1@2x.png" alt="">
+            <div class="good_info">
+                <div>Galaxy Z系列 5折券</div>
+                <div>50积分</div>
+            </div>
+            <div class="place goods_statu_after_sale">
+                售后中
+            </div>
+        </div>
+        <div class="goods_card">
+            <img class="goods_img" src="./assets/goods/单品-图片1@2x.png" alt="">
+            <div class="good_info">
+                <div>Galaxy Z系列 5折券</div>
+                <div>50积分</div>
+            </div>
+            <div class="place goods_statu_after_sale">
+                售后中
+            </div>
+        </div>
+        <div class="goods_card">
+            <img class="goods_img" src="./assets/goods/单品-图片1@2x.png" alt="">
+            <div class="good_info">
+                <div>Galaxy Z系列 5折券</div>
+                <div>50积分</div>
+            </div>
+            <div class="place goods_statu_after_sale">
+                售后中
+            </div>
+        </div>
+        <div class="goods_card">
+            <img class="goods_img" src="./assets/goods/单品-图片1@2x.png" alt="">
+            <div class="good_info">
+                <div>Galaxy Z系列 5折券</div>
+                <div>50积分</div>
+            </div>
+            <div class="place goods_statu_after_sale">
+                售后中
+            </div>
+        </div>
+        <div class="goods_card">
+            <img class="goods_img" src="./assets/goods/单品-图片1@2x.png" alt="">
+            <div class="good_info">
+                <div>Galaxy Z系列 5折券</div>
+                <div>50积分</div>
+            </div>
+            <div class="place goods_statu_after_sale">
+                售后中
+            </div>
+        </div>
+        <div class="goods_card">
+            <img class="goods_img" src="./assets/goods/单品-图片1@2x.png" alt="">
+            <div class="good_info">
+                <div>Galaxy Z系列 5折券</div>
+                <div>50积分</div>
+            </div>
+            <div class="place goods_statu_after_sale">
+                售后中
+            </div>
+        </div>
+    </div>
+
 </body>
+
 </html>
